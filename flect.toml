@@ -1,0 +1,12 @@
+[app]
+name  = "hooks-service"
+image = "ghcr.io/dotlabshq/hooks-service:0.1.0"
+
+# hooks-service = the outbound-webhooks capability lego (ADR-010). Org-scoped over
+# the shared foldbase (tenant = org id). Endpoints are customer-configured delivery
+# targets; emitting an event fans it out to matching active endpoints, POSTs a
+# signed payload (HMAC-SHA256), and logs each delivery. Verifies membership via
+# org-service.
+[env]
+# FOLDBASE_SERVICE_URL, FOLDBASE_TOKEN — injected at deploy.
+# ORG_SERVICE_URL — injected via service binding (membership checks).
