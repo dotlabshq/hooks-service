@@ -1,17 +1,28 @@
 {
   "name": "@baseworks/hooks",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Webhooks capability: typed HTTP client, event catalog, projections, and CLI plugin for hooks-service (endpoint registry + signed delivery + delivery log). Contract-first, versioned with the service.",
   "type": "module",
-  "publishConfig": { "access": "public" },
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     ".": "./dist/client.js",
     "./events": "./dist/events.js",
     "./projections": "./dist/projections.js",
-    "./cli": "./dist/cli.js"
+    "./cli": "./dist/cli.js",
+    "./graphql": "./dist/graphql.js"
   },
-  "files": ["dist", "src"],
-  "scripts": { "build": "tsup", "typecheck": "tsc --noEmit", "test": "vitest run", "test:watch": "vitest" },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
   "dependencies": {
     "@baseworks/cli": "^0.2.0",
     "@baseworks/foldbase": "workspace:*",
